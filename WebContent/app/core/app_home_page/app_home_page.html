@@ -1,0 +1,38 @@
+<div class="col-md-4">
+	<p>&nbsp;</p>
+</div>
+
+<div class="col-md-4 menuLabel" data-ng-hide="hideMainMenu">
+	<div class="list-group" data-ng-show="isProfileLoaded">
+		 <a class="list-group-item list-group-item-header">
+			<label class="list-group-item-heading menuHeader">Menu</label>
+		</a> 
+ 		  <a href="#" class="list-group-item" data-ng-show="isSSN" data-ng-click="$event.preventDefault();loadApplication('ssn')">
+			<label class="list-group-item-heading">MIP/Success Sharing</label>
+		</a> 
+		
+		 <a href="#" class="list-group-item" data-ng-show="isAnswerLetter" data-ng-click="$event.preventDefault();loadApplication('AnswerLetter')">
+			<label class="list-group-item-heading">Answer Letter</label>
+		</a>   
+		<a href="#" class="list-group-item" data-ng-show="isW2C" data-ng-click="$event.preventDefault();loadApplication('w2c')">
+			<label class="list-group-item-heading">W2C</label>
+		</a>
+
+		<a href="#" class="list-group-item" data-ng-show="isReconcile" data-ng-click="$event.preventDefault();loadApplication('reconcileMenuItems')">
+
+			<label class="list-group-item-heading">Reconciliations</label>
+			
+		</a>
+		<a href="#" class="list-group-item" data-ng-show="isXREF" data-ng-click="$event.preventDefault();loadApplication('xref')">
+			<label class="list-group-item-heading">Associate Lookup</label>
+		</a> 
+		
+		 <a href="#" class="list-group-item" data-ng-show="isGarnishment" data-ng-click="$event.preventDefault();loadApplication('letters')">
+			<label class="list-group-item-heading">Garnishment Reports</label>
+		</a>
+	</div>
+	
+</div>
+<div class="col-md-4">
+	<p>&nbsp;</p>
+</div>

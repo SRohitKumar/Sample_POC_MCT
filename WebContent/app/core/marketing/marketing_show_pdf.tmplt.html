@@ -1,0 +1,46 @@
+
+<style>
+.row {
+    margin: 5px;
+    padding: 5px;
+}
+</style>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="md-card">
+			<div class="md-card-title-border">
+				<span class="md-headline">Data</span>
+			</div>
+			<div class="md-card-content">
+				<div class="row" data-ng-show="mctPDFCtrl30.showPdf">
+					<div class="col-md-12">
+						<object data="{{mctPDFCtrl30.pdfUrl}}" type="application/pdf" width="100%" height="450px;">
+						  <embed src="{{mctPDFCtrl30.pdfUrl}}" type="application/pdf" />
+						</object>
+					</div>
+				</div>
+			</div>
+<!-- 			<div class="md-card-content">
+				<div class="row" data-ng-show="mctPDFCtrl30.showPdf">
+					<div class="col-md-12">
+						<iframe id="pdf" data-ng-show="mctPDFCtrl30.pdfDownloaded" src="{{mctPDFCtrl30.pdfUrl}}" width="100%" height="450px;"></iframe>
+					</div>
+				</div>
+			</div>
+ -->		</div>
+	</div>
+</div>
+					<div class="modal-footer">
+						<div class="row">
+							<div class="col-md-4" >
+							</div>
+							<div class="col-md-2">
+							</div>
+							<div class="col-md-2">
+								<p class="input-group md-text-field">
+								<button class="md-button md default" data-ng-click="mctPDFCtrl30.closeButton()"><i class="fa  fa-close"></i>&nbsp;&nbsp;Close</button>
+								</p>
+							</div>
+						</div>
+					</div>

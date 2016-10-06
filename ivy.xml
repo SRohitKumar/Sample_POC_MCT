@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!-- 
+	Licensed to the Apache Software Foundation (ASF) under one
+	or more contributor license agreements. See the NOTICE file 
+	distributed with this work for additional information 
+	regarding copyright ownership. The ASF licenses this file 
+	to you under the Apache License, Version 2.0 (the 
+	"License"); you may not use this file except in compliance 
+	with the License. You may obtain a copy of the License at 
+	
+		http://www.apache.org/licenses/LICENSE-2.0
+		 
+	Unless required by applicable law or agreed to in writing, 
+	software distributed under the License is distributed on an 
+	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY 
+	KIND, either express or implied. See the License for the 
+	specific language governing permissions and limitations 
+	under the License. 
+-->
+<ivy-module version="2.0" 
+	xmlns:m="http://ant.apache.org/ivy/maven"  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:e="http://ant.apache.org/ivy/extra"
+	xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+	<info organisation="com.homedepot.${project.system}.${project.subsystem}" module="${project.name}" status="${project.status}" />
+
+	<configurations>
+		<!-- Configurations affect the classpath used for various build tasks and limit the transitivity of a dependency. -->
+		<conf name="compile"/>
+		<conf name="provided"/>
+		<conf name="runtime"/>
+		<conf name="test"/>
+		<conf name="master"/>
+		<conf name="sources"/>
+	</configurations>
+	
+	<dependencies defaultconf="compile" defaultconfmapping="*-&gt;default">
+		<!--COMPILE-->
+		<!-- Compile dependencies are available in all classpaths of a project. -->
+		<!-- These dependencies are included in the war's WEB-INF/lib and are propagated to dependent projects. -->
+		<!-- This is the default config and is used if no config is specified. -->
+<dependency conf="compile" name="commons-httpclient" org="commons-httpclient" rev="3.1">
+    		<artifact ext="jar" name="commons-httpclient"/>
+		</dependency>
+		<dependency conf="compile" name="commons-io" org="commons-io" rev="2.4"/>
+		
+		<dependency conf="compile" name="commons-lang3" org="org.apache.commons" rev="3.1"/>
+		<dependency conf="compile" name="jersey-core" org="com.sun.jersey" rev="1.19"/>
+		<dependency conf="compile" name="jersey-server" org="com.sun.jersey" rev="1.19"/>
+		<dependency conf="compile" name="jersey-client" org="com.sun.jersey" rev="1.19"/>
+		<dependency conf="compile" name="jersey-servlet" org="com.sun.jersey" rev="1.19"/>
+		<dependency conf="compile" name="jersey-json" org="com.sun.jersey" rev="1.19"/>
+		<dependency conf="compile" name="jackson-databind" org="com.fasterxml.jackson.core" rev="2.2.2"/>
+		<dependency conf="compile" name="jackson-core" org="com.fasterxml.jackson.core" rev="2.2.2"/>	
+		
+		
+		<dependency name="jersey-multipart" org="com.sun.jersey.contribs" rev="1.19">
+			<artifact ext="jar" name="jersey-multipart"/>
+			<exclude org="org.jvnet.mimepull"/>
+			<exclude org="javax.ws.rs"/>
+		</dependency>
+
+		<dependency name="mimepull" org="org.jvnet.mimepull" rev="1.9.4">
+			<artifact ext="jar" name="mimepull"/>
+			<exclude org="javax.ws.rs"/>
+		</dependency>	
+
+		<dependency conf="compile" name="commons-beanutils" org="commons-beanutils" rev="1.7.0"/>
+		<dependency conf="compile" name="commons-codec" org="commons-codec" rev="1.3"/>
+		<dependency conf="compile" name="commons-collections" org="commons-collections" rev="3.1"/>
+		<dependency conf="compile" name="commons-digester" org="commons-digester" rev="1.6"/>
+		<dependency conf="compile" name="commons-lang" org="commons-lang" rev="2.6"/>
+		<dependency conf="compile" name="commons-logging" org="commons-logging" rev="1.0.4"/>
+		<dependency name="xstream" org="com.thoughtworks.xstream" rev="1.4.4">
+    		<artifact ext="jar" name="xstream"/>
+		</dependency>		
+		
+		<dependency name="THDCommon" org="com.homedepot.mm.rd" rev="4.0.9"> 
+		    <artifact ext="jar" name="THDCommon"/> 
+		</dependency> 
+		
+		<dependency name="poi" org="org.apache.poi" rev="3.11"> 
+		    <artifact ext="jar" name="poi"/> 
+		</dependency> 
+		
+		<dependency name="poi-ooxml" org="org.apache.poi" rev="3.11"> 
+		    <artifact ext="jar" name="poi-ooxml"/> 
+		</dependency> 
+		
+		<dependency conf="compile" name="httpclient" org="org.apache.httpcomponents" rev="4.2.1">
+		<artifact ext="jar" name="httpclient"/>
+		</dependency>
+
+
+		<dependency conf="compile" name="httpcore" org="org.apache.httpcomponents" rev="4.2.1">
+		<artifact ext="jar" name="httpcore"/>
+		</dependency>
+		
+		<!--PROVIDED-->
+		<!-- This is much like compile, but indicates you expect the JDK or the tomcat container to provide the dependency at runtime. -->
+		<!-- This scope is only available on the compilation and test classpaths, and is not transitive. -->
+		<!-- NOTE: You must add conf="provided" to the dependency -->
+		<dependency conf="provided" name="tomcatX-grid" org="com.homedepot.ta.aa.arch" rev="7.+">
+    		<artifact ext="jar" name="tomcatX-grid"/>
+		</dependency>
+		<dependency name="asm" org="org.ow2.asm" rev="5.0.3">
+		    <artifact ext="jar" name="asm"/>
+		</dependency>
+		<!--RUNTIME-->
+		<!-- This scope indicates that the dependency is not required for compilation, but is for execution. -->
+		<!-- It is in the runtime and test classpaths, but not the compile classpaths and is not transitive. -->
+		<!-- NOTE: You must add conf="runtime" to the dependency -->
+		
+
+		<!--TEST-->
+		<!-- Include individual libraries needed from the repository for test -->
+		<!-- This scope is only available on the test compile and test classpath, and is not transitive. -->
+		<!-- NOTE: You must add conf="test" to the dependency -->
+	
+	
+		<dependency name="junit" org="junit" rev="4.11">
+			<artifact ext="jar" name="junit"/>
+			<exclude org="org.slf4j"/>
+		</dependency>
+		
+		<dependency conf="test" name="h2-THDv2.1" org="h2-THDv2.1" rev="h2-THDv2.1">
+		    <artifact ext="jar" name="h2-THDv2.1"/>
+		</dependency>
+		
+		<dependency conf="test" name="HomerUnitV2.3" org="HomerUnitV2.3" rev="HomerUnitV2.3">
+		    <artifact ext="jar" name="HomerUnitV2.3"/>
+		</dependency>
+		
+		<dependency name="tomcat-dbcp" org="org.apache.tomcat" rev="7.0.47">
+		    <artifact ext="jar" name="tomcat-dbcp"/>
+		    <exclude org="org.slf4j"/>
+		</dependency>
+		
+		<dependency name="powermock-api-mockito" org="org.powermock" rev="1.5.6"> 
+		    <artifact ext="jar" name="powermock-api-mockito"/> 
+		    <exclude org="org.slf4j"/>
+		</dependency> 
+		
+		<dependency name="powermock-module-junit4" org="org.powermock" rev="1.5.6"> 
+		    <artifact ext="jar" name="powermock-module-junit4"/> 
+		    <exclude org="org.slf4j"/>
+		    <exclude org="org.javassist"/>
+		</dependency>
+
+		<dependency conf="test" name="cobertura" org="net.sourceforge.cobertura" rev="2.1.1">
+	        <artifact ext="jar" name="cobertura"/>
+	    </dependency>
+		
+	    <dependency name="guava" org="com.google.guava" rev="16.0.1"> 
+            <artifact ext="jar" name="guava"/> 
+        </dependency> 
+		
+	</dependencies>
+</ivy-module>

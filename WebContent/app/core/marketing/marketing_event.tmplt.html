@@ -1,0 +1,21 @@
+
+<div class="col-md-3">
+	<p>&nbsp;</p>
+</div>
+<div class="col-md-6">
+	<div class="list-group">
+		<div class="md-card">
+			<div class="md-card-title-border">
+		      <span class="md-headline mct-title">Events</span>
+		    </div>
+		</div>
+		<div data-ng-repeat="e in mctEventCtrl.eventList" class="mct-align">
+			<div class="md-card mct-box" data-ng-click="$event.preventDefault();mctEventCtrl.loadFixtures(e.id)">
+		      	<button class="md-button">{{e.name}}</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-md-3">
+	<p>&nbsp;</p>
+</div>

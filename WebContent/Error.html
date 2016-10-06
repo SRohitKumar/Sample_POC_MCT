@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta charset="utf-8">
+	<title>The Home Depot: Application Login</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="app/bower_components/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/ux-custom.css">
+    <!-- <link rel="stylesheet" href="css/custom.css" /> -->
+	<link rel="stylesheet" href="css/navbar-fixed-top.css" />	
+  </head>
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+          
+	            <img src="images/com-hd-logo.png" height="50" width="50">
+	            <span class="brand">Payroll Accounting Application</span>
+	        </div>
+        </div>
+      </div>
+    </nav>
+	
+    <div class="container">
+
+      <!-- Main component Start  -->
+      <div class="md-card">
+    <div class="md-card-title-border">
+      <span class="md-headline">Login</span>
+		  </div>
+		  <div class="md-card-content">
+		  <div class="alert alert-danger">
+		  		Your login has failed. Please provide a valid user name and password.
+		  	</div>
+		  	<p class="bg-danger">
+		  		You have received this page because the link/application you tried to access is password protected. Please supply a user id and password below. After successful sign-in, you will be directed to the page/link/application you originally requested.
+		  	</p> 
+		   <form class="form-horizontal" method="post" name="THDLoginPage" action="j_security_check">
+		        <div class="row form-group" style="display:none;">
+		            <label for="inputUserID" class="control-label col-md-3">Location</label>
+		            <div class="col-xs-9" >
+		                <div class="checkbox">
+		                    <input type="radio" name="j_userbelongsto" id="locSto" value="Store"> <label style="padding-left:0px;" for="locSto">Store</label>&nbsp;
+		                    <input class="input-sm" name="j_storenumber" id="j_storenumber" maxlength="4" placeholder="####" style="width:75px;"><br>
+		                    <input type="radio" name="j_userbelongsto" id="locOth" value="Other" checked="checked"> <label style="padding-left:0px;" for="locOth">Other Location</label>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="row form-group">
+				  	<div class="col-md-4 text-right">
+				  	<label for="j_username" class="control-label">User ID</label>
+				  	</div>
+				  	<div class="col-md-2 col-md-offset-1 md-text-field">
+		                <input type="text" size="10" maxlength="25" class="input-sm loginInput" name="j_username" id="j_username">
+				  	</div>
+				  	<div class="col-md-3">
+				  		<!-- <span>(Store: AIS ID) (Other Location: LAN ID)</span> -->
+				  	</div>
+				</div>
+				<div class="row form-group">
+				  	<div class="col-md-4 text-right">
+				  	<label for="j_password" class="control-label">Password</label>
+				  	</div>
+				  	<div class="col-md-2 col-md-offset-1 md-text-field">
+		                <input type="password" size="10" maxlength="25" class="input-sm loginInput" name="j_password" id="j_password">
+				  	</div>
+				</div>
+				<div class="row form-group">
+				  	<div class="col-md-4">
+				  	
+				  	</div>
+				  	<div class="col-md-2">
+				  	<button type="submit" onclick="return THDLoginPage_validate()" class="md-button primary md">Login</button>
+				  	</div>
+				</div>
+		    </form>
+		  </div>
+		</div>
+      
+    </div> <!-- /container -->
+    
+    <!-- Alert box -->
+	<div id="alertBox" class="modal fade">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						data-backdrop="static" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Information</h4>
+				</div>
+				<div class="modal-body">
+					<div class="alert alert-warning row">
+
+						<div class="col-md-3">
+							<i class="fa fa-exclamation-triangle" style="font-size: 3em;"></i>
+						</div>
+						<div class="col-md-9">
+							<span id="exErrMsg"> </span>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer tac">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /container -->
+	
+	<script src="app/core/login.js"></script>
+</body></html>
