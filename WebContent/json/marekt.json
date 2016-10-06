@@ -1,0 +1,23 @@
+[{
+		"EventId": "1",
+		"CoreType": "Core",
+		"Price_Strategy": "Special Buy WAS",
+		"Ad_Retail": " WAS $11.97/Now $9.97",
+		"Total_Buy_Units": "181,000",
+		"Total_Buy": "$2,100,000",
+		"Projected_Sell_Thru": "95%",
+		"Forecasted_Sales": "$1,714,342"
+	},
+
+	{
+		"EventId": "2",
+		"CoreType": "Core",
+		"Price_Strategy": "Special Buy WAS",
+		"Ad_Retail": " WAS $11.97/Now $9.97",
+		"Total_Buy_Units": "181,000",
+		"Total_Buy": "$2,100,000",
+		"Projected_Sell_Thru": "95%",
+		"Forecasted_Sales": "$1,714,342"
+	}
+
+]
