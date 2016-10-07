@@ -6,6 +6,7 @@
 	ssnApp.controller('marketingCtrl', marketingCtrl);
 	marketingCtrl.$inject = ['$scope', '$rootScope','$window', '$http', 'marketingPageService', '$uibModal']
 	function marketingCtrl($scope, $rootScope, $window, $http, marketingPageService, $uibModal) {
+		
 		var mctCtrl = this;
 		mctCtrl.pdfDownloaded = false;
 		mctCtrl.fileType = 0;

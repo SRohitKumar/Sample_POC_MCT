@@ -10,7 +10,7 @@
 		    </div>
 		</div>
 		<div data-ng-repeat="e in mctEventCtrl.eventList" class="mct-align">
-			<div class="md-card mct-box" data-ng-click="$event.preventDefault();mctEventCtrl.loadFixtures(e.id)">
+			<div class="md-card mct-box" data-ng-click="$event.preventDefault();mctEventCtrl.loadFixtures(e)">
 		      	<button class="md-button">{{e.name}}</button>
 			</div>
 		</div>
