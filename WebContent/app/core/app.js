@@ -17,7 +17,16 @@ ssnApp.config(['$routeProvider',function ($routeProvider) {
         	templateUrl: 'app/core/marketing/marketing_fixtures.tmplt.html',
             controller: 'marketingCtrl as mctCtrl'
      
-        }).otherwise({
+        }).when('/palletsFixtures', {
+        	templateUrl: 'app/core/marketing/pallets_fixtures.html',
+            controller: 'palletsFixturesCtrl as palletsCtrl'
+     
+        }).when('/ictWalkReview', {
+        	templateUrl: 'app/core/marketing/ICWalkReview.html',
+            controller: 'reviewController as icwalkReview'
+     
+        })
+        .otherwise({
             redirectTo: '/'
         });
 }]);

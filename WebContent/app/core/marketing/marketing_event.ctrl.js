@@ -18,7 +18,13 @@
 					 marketingPageService.setFixtures(value.fixtures);
 				 }
 			 });
-			 $location.path('/marketingFixtures');
+			 
+			 if(type.id == 1725){
+				 $location.path('/palletsFixtures');
+			 }else{
+				 $location.path('/marketingFixtures'); 
+			 }
+			 
 		}
 	};
 		
