@@ -12,8 +12,8 @@
 			<div class="row">
 				<div class="col-sm-12 ">
 					<div data-ng-repeat="f in mctCtrl.fixtures" class="mct-align-center">			      	
-						<div class="col-sm-6 md-card mct-box">
-							<button class="md-button md primary" data-ng-click="mctCtrl.show(11)">{{f}}</button>
+						<div class="col-sm-6 col-md-4 col-xs-3 md-card mct-box">
+							<button class="md-button md primary" data-ng-click="mctCtrl.show($index % 3)">{{f}}</button>
 						</div>
 					</div>
 				</div>
@@ -22,12 +22,12 @@
 				<div class="col-md-4 col-sm-3"></div>
 				<div class=" col-md-2 col-sm-3 col-xs-6 text-left md-radio">
 					<input id="ppt" type="radio" name="fileType"
-						data-ng-model="mctCtrl.fileType" data-ng-value="0"
+						data-ng-model="mctCtrl.fileType" data-ng-value="mctCtrl.ppt"
 						class="form-control" checked="checked" /> <label for="ppt"><span><span></span></span>PPT</label>
 				</div>
 				<div class=" col-md-2 col-sm-3 col-xs-6 text-left md-radio">
 					<input id="excel" name="fileType" type="radio"
-						data-ng-model="mctCtrl.fileType" data-ng-value="1"
+						data-ng-model="mctCtrl.fileType" data-ng-value="mctCtrl.xlsx"
 						class="form-control" /> <label for="excel"><span><span></span></span>EXCEL</label>
 				</div>
 				<div class="col-md-4 col-sm-3"></div>

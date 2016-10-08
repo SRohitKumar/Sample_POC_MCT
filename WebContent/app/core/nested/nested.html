@@ -1,0 +1,133 @@
+<div class="row">
+	<div class="col-sm-12 ">
+		<div class="list-group">
+			<div class="md-card">
+			<div class="md-card-title-border">
+		      <span class="md-headline mct-title">Layout Design</span>
+		      <a class="md-button md pull-right" href="#/"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp;Back to Events Menu</a>
+		    </div>
+		    </div>
+
+<div class="nestedDemo row">
+
+<!-- Markup for lists inside the dropzone. It's inside a seperate template
+     because it will be used recursively. The dnd-list directive enables
+     to drop elements into the referenced array. The dnd-draggable directive
+     makes an element draggable and will transfer the object that was
+     assigned to it. If an element was dragged away, you have to remove
+     it from the original list yourself using the dnd-moved attribute -->
+<script type="text/ng-template" id="list.html">
+    <ul dnd-list="list">
+        <li ng-repeat="item in list"
+            dnd-draggable="item"
+            dnd-effect-allowed="move"
+            dnd-moved="list.splice($index, 1)"
+            dnd-selected="models.selected = item"
+            ng-class="{selected: nestedCtrl.models.selected === item}"
+            ng-include="item.type + '.html'">
+        </li>
+    </ul>
+</script>
+
+<!-- This template is responsible for rendering a container element. It uses
+     the above list template to render each container column -->
+<script type="text/ng-template" id="container.html">
+    <div class="container-element box box-blue">
+        <!--h3>Container {{item.id}}</h3-->
+        <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'"></div>
+        <div class="clearfix"></div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="separator.html">
+    <div class="separator">{{item.label}}</div>
+</script>
+
+<script type="text/ng-template" id="standee.html">
+    <div class="standee"></div>
+</script>
+<script type="text/ng-template" id="stripe.html">
+    <div class="stripe"></div>
+</script>
+<script type="text/ng-template" id="pallet.html">
+    <div class="pallet">{{item.label}}</div>
+</script>
+
+<script type="text/ng-template" id="halfpalletv.html">
+    <div class="halfpalletv">{{item.label}}</div>
+</script>
+
+<script type="text/ng-template" id="halfpalleth.html">
+    <div class="halfpalleth">{{item.label}}</div>
+</script>
+
+<script type="text/ng-template" id="quarterpallet.html">
+    <div class="quarterpallet">{{item.label}}</div>
+</script>
+
+<!-- Template for a normal list item -->
+<script type="text/ng-template" id="item.html">
+    <div class="item">{{item.label}}</div>
+</script>
+
+
+<!-- Sidebar -->
+<div class="col-sm-3 col-md-2" ng-show="nestedCtrl.designLayout">
+
+    <div class="toolbox box box-blue box-padding">
+        <h3>New Elements</h3>
+        <ul>
+            <!-- The toolbox only allows to copy objects, not move it. After a new
+                 element was created, dnd-copied is invoked and we generate the next id -->
+            <li ng-repeat="item in nestedCtrl.models.templates"
+                dnd-draggable="item"
+                dnd-effect-allowed="copy"
+                dnd-copied="item.id = item.id + 1" >
+                <div ng-include="item.type + '.html'"></div><!--  button type="button" class="btn btn-primary itemNew" disabled="disabled">{{item.label}}</button-->
+            </li>
+        </ul>
+    </div>
+
+    <div ng-if="nestedCtrl.models.selected" class="box box-blue box-padding">
+        <h3>Selected</h3>
+        <strong>Type: </strong> {{nestedCtrl.models.selected.title}}<br>
+        <input type="text" ng-model="nestedCtrl.models.selected.label" class="form-control" style="margin-top: 5px" />
+    </div>
+
+
+</div>
+
+
+
+
+<!-- Main area with dropzones and source code -->
+<div class="col-sm-6 col-md-8 ">
+    <div class="row">
+        <div ng-repeat="(zone, list) in nestedCtrl.models.dropzones" class="col-sm-12 col-md-12">
+            <div class="dropzone box box-yellow">
+                <!-- The dropzone also uses the list template -->
+                <h3>Layout Design</h3>
+                <div ng-include="'list.html'"></div>
+            </div>
+        </div>
+		<div class="col-sm-6 col-md-4 col-xs-3 md-card mct-box" ng-show="nestedCtrl.designLayout">
+			<button class="md-button md primary" ng-click="nestedCtrl.saveLayout()">Save</button>
+		</div>
+    </div>
+</div>
+
+<div class="col-sm-3 col-md-2" ng-show="nestedCtrl.designLayout">
+    <div class="trashcan box box-blue box-padding">
+        <!-- If you use [] as referenced list, the dropped elements will be lost -->
+        <h3>Trashcan</h3>
+        <ul dnd-list="[]">
+            <li><img src="app/core/nested/trashcan.jpg"></li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
+		</div>
+	</div>
+</div>

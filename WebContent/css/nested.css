@@ -1,0 +1,213 @@
+/***************************** Required styles *****************************/
+
+/**
+ * For the correct positioning of the placeholder element, the dnd-list and
+ * it's children must have position: relative
+ */
+.nestedDemo ul[dnd-list],
+.nestedDemo ul[dnd-list] > li {
+	position: relative;
+}
+
+/***************************** Dropzone Styling *****************************/
+
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+.nestedDemo .dropzone ul[dnd-list] {
+    min-height: 42px;
+    margin: 0px;
+    padding-left: 0px;
+}
+
+/**
+ * The dnd-lists's child elements currently MUST have
+ * position: relative. Otherwise we can not determine
+ * whether the mouse pointer is in the upper or lower
+ * half of the element we are dragging over. In other
+ * browsers we can use event.offsetY for this.
+ */
+.nestedDemo .dropzone li {
+    background-color: #fff;
+    border: 0px solid #ddd;
+    display: block;
+    padding: 0px;
+}
+
+/**
+ * Reduce opacity of elements during the drag operation. This allows the user
+ * to see where he is dropping his element, even if the element is huge. The
+ * .dndDragging class is automatically set during the drag operation.
+ */
+.nestedDemo .dropzone .dndDragging {
+    opacity: 0.7;
+}
+
+/**
+ * The dndDraggingSource class will be applied to the source element of a drag
+ * operation. It makes sense to hide it to give the user the feeling that he's
+ * actually moving it. Note that the source element has also .dndDragging class.
+ */
+.nestedDemo .dropzone .dndDraggingSource {
+    display: none;
+}
+
+/**
+ * An element with .dndPlaceholder class will be added as child of the dnd-list
+ * while the user is dragging over it.
+ */
+.nestedDemo .dropzone .dndPlaceholder {
+    background-color: #ddd;
+    min-height: 50px;
+    display: block;
+    position: relative;
+}
+
+/***************************** Element Selection *****************************/
+
+.nestedDemo .dropzone .selected .item, .nestedDemo .dropzone .selected .pallet, .nestedDemo .dropzone .selected .halfpalleth, .nestedDemo .dropzone .selected .halfpalletv, .nestedDemo .dropzone .selected .quarterpallet {
+    color: #3c763d;
+    background-color: #dff0d8;
+}
+
+.nestedDemo .dropzone .selected .box {
+    border-color: #d6e9c6;
+}
+
+.nestedDemo .dropzone .selected .box > h3 {
+    color: #3c763d;
+    background-color: #dff0d8;
+    background-image: linear-gradient(to bottom,#dff0d8 0,#d0e9c6 100%);
+    border-color: #d6e9c6;
+}
+
+/***************************** Element type specific styles *****************************/
+
+.nestedDemo .dropzone .item, .nestedDemo .dropzone .pallet,.nestedDemo .dropzone .halfpalleth,.nestedDemo .dropzone .halfpalletv,.nestedDemo .dropzone .quarterpallet {
+}
+
+.nestedDemo .dropzone .container-element {
+/*     background-color: #FAA84A; */
+}
+
+.nestedDemo .dropzone .container-element .column {
+	float: left;
+    width: 100%;
+}
+.pallet,  .halfpalleth,  .halfpalletv,  .quarterpallet {
+	border: 1px solid gray;
+    background-color: #F96302;
+    text-align:center;
+    vertical-align: middle;
+    display: block;
+    position: relative;
+}
+
+.pallet {
+    width: 80px;
+    height: 80px;
+	padding-top: 30px;
+}
+
+.halfpalletv {
+    width: 40px;
+    height: 80px;
+	padding-top: 30px;
+/* 	float: left; */
+}
+
+.halfpalleth {
+    width: 80px;
+    height: 40px;
+	padding-top: 7px;
+}
+
+.quarterpallet {
+    width: 40px;
+    height: 40px;
+	padding-top: 7px;
+/* 	float: left; */
+}
+
+.separator {
+	width: 80px;
+    height: 10px;
+}
+.standee {
+	width: 40px;
+    height: 10px;
+    background-color: black;
+    margin: 0px 20px 0px 20px;
+}
+.stripe {
+	color: white;
+	width: 80px;
+	height: 20px;
+	border: 1px solid gray;
+	background: repeating-linear-gradient(
+	    -45deg,
+	    #fff 5px,
+	    #fff 10px,
+	    #000 6px,
+	    #000 11px
+	);
+}
+
+.nestedDemo .toolbox .separator {
+    border: 1px solid grey;
+}
+
+/***************************** Toolbox *****************************/
+
+.nestedDemo .toolbox .container-element {
+    min-height: 40px;
+    width: 100%;
+}
+
+.nestedDemo .toolbox ul {
+    list-style: none;
+    padding-left: 0px;
+    cursor: move;
+}
+.nestedDemo .toolbox button {
+    margin: 5px;
+    opacity: 1.0;
+}
+
+.nestedDemo .toolbox .dndDragging {
+    opacity: 0.5;
+}
+
+.nestedDemo .toolbox ul li {
+    padding : 3px;
+}
+
+.nestedDemo .toolbox .dndDraggingSource {
+    opacity: 1.0;
+}
+
+/***************************** Trashcan *****************************/
+
+.nestedDemo .trashcan ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.nestedDemo .trashcan img {
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.nestedDemo .trashcan .dndDragover img {
+    width: 100%;
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+}
+
+.nestedDemo .trashcan .dndPlaceholder {
+    display: none;
+}

@@ -19,6 +19,18 @@ body {
 .decimal-right-align {
 	text-align:right;
 } 
+.green {
+    background-color: green;
+    color: black;
+}
+.yellow {
+    background-color: yellow;
+    color: black;
+}
+.red {
+    background-color: red;
+    color: black;
+}
 select{
    -webkit-appearance: none; 
    -moz-appearance: none;

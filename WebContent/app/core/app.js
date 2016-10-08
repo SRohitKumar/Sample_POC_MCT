@@ -5,8 +5,8 @@ var ssnApp;
 (function(){
 // Declare app level module which depends on views, and components
 ssnApp = angular.module('ssnApp', ['ui.bootstrap', 'ngRoute', 'ngSanitize','blockUI','ui.select', 
-             'ui.grid.cellNav','ui.grid','ui.grid.edit','ui.grid.selection','ui.grid.resizeColumns', 
-             'ui.grid.pagination','ui.grid.exporter','ngJsonExportExcel','lr.upload','ssnApp.marketingPageMdl']);
+             'ui.grid.cellNav','ui.grid', 'ui.grid.grouping','ui.grid.edit','ui.grid.selection','ui.grid.resizeColumns', 
+             'ui.grid.pagination','ui.grid.exporter','ngJsonExportExcel','dndLists','lr.upload','ssnApp.marketingPageMdl']);
 
 ssnApp.config(['$routeProvider',function ($routeProvider) {
 	 'use strict';
@@ -25,8 +25,14 @@ ssnApp.config(['$routeProvider',function ($routeProvider) {
         	templateUrl: 'app/core/marketing/palletDetails.html',
             controller: 'palletDetailsController as palletDtlCtrl'
      
-        })
-        .otherwise({
+        }).when('/SystemHealth', {
+        	templateUrl: 'app/core/marketing/marketing_fixtures.tmplt.html',
+            controller: 'marketingCtrl as mctCtrl'
+        }).when('/DranAndDrop', {
+        	templateUrl: 'app/core/nested/nested.html',
+            controller: 'NestedListsDemoController as nestedCtrl'
+     
+        }).otherwise({
             redirectTo: '/'
         });
 }]);

@@ -11,7 +11,14 @@
 			}, function(response){
 			}
 		);
-		
+
+		mctEventCtrl.designLayout=marketingPageService.getDesign();
+
+			mctEventCtrl.loadDranAndDrop = function (design)  {
+			marketingPageService.setDesign(design); 
+			$location.path('/DranAndDrop');
+		}
+				
 		mctEventCtrl.reviewScreen = function (type)  {
 			$location.path('/palletsFixtures');
 		}

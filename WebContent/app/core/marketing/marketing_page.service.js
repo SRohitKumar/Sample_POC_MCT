@@ -6,6 +6,40 @@
 	
 		this.fixtures=null;
 		this.events=null;
+		this.layout={
+	            "A": [
+	                  {
+	                      "type": "container",
+	                      "id": 1,
+	                      "columns": [
+	                          [
+	                              {
+	                                  "type": "pallet",
+	                                  "label": "23",
+	                                  "id": "1"
+	                              }, {
+	                                  "type": "halfpalleth",
+	                                  "label": "24",
+	                                  "id": "2"
+	                              }, {
+	                                  "type": "halfpalletv",
+	                                  "label": "25",
+	                                  "id": "3"
+	                              }, {
+	                                  "type": "quarterpallet",
+	                                  "label": "26",
+	                                  "id": "4"
+	                              }, {
+	                                  "type": "quarterpallet",
+	                                  "label": "27",
+	                                  "id": "5"
+	                              }
+	                          ],[]
+	                      ]
+	                  }
+	              ]
+		};
+		this.design=true;
 		this.marketingShowData = function(pos){
 			return $http({
 			      url: 'rest/marketing/showData?pos='+pos,
@@ -20,18 +54,44 @@
 			    });
 			
 		};
-		this.setFixtures = function(f){
-			this.fixtures = f;
+		this.getSystemHealth = function(){
+			return $http({
+			      url: 'rest/marketing/getSystemHealth',
+			      method: 'GET'
+			    });
+			
 		};
 		this.getFixtures = function(){
 			return this.fixtures;
 		};
-		this.setEvents = function(e){
-			this.events = e;
+		this.setFixtures = function(f){
+			this.fixtures = f;
 		};
+		this.getLayout = function(){
+			return this.layout;
+		};
+		this.setLayout = function(f){
+			this.layout = f;
+		};
+
+		this.getDesign = function(){
+			return this.design;
+		};
+		this.setDesign = function(e){
+			this.design = e;
+		};
+		
+		this.getFixtures = function(){
+			return this.fixtures;
+		};
+		
 		this.getEvents = function(){
 			return this.events;
 		};
+		this.setEvents = function(f){
+			this.events = f;
+		};
+
 	};
 
 })();
