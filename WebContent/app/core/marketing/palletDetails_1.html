@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-ngList-directive-newlines-production</title>
+    <meta name="description" content="Responsive website using AngularJS - demo page">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  	<script type="text/javascript" src="../../bower_components/angular/angular.min.js"></script>
+    <script  type="text/javascript" src="reviewController.js"></script>
+    <script src="app/bower_components/angular/angular.min.js"></script>
+<style type="text/css">
+     .mainPanel {
+    border: 10px solid rgb(212,212,212);
+    width: 400px; 
+    height: 600px
+}
+.subPanel {
+    border: 1px solid rgb(212,212,212);
+    width: 400px; 
+    height: 120px;
+}
+.headerPanel{
+  width: 400px;
+    height:95px;
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+   }
+.leftBox{
+    padding: 10px;
+    width: 50px;
+    overflow: auto;
+    background-color: #AF7AC5;
+}
+.centerBox{
+    background-color: #dddddd;
+    width: 200px;
+    overflow:auto;
+}
+.rightBox{
+    width: 75px; 
+    background-color: #ffffff;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 400px;
+    height: 1   00px;
+    padding-left: 8px;
+    
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    border: 1px solid black;
+    background-color: #dddddd;
+    
+}
+tr:nth-child(odd) {
+    border: 1px solid black;
+    background-color: #ffffff;
+    
+}
+    </style>
+    
+    
+  </head>
+	<body ng-controller="reviewController">
+    <div class="mainPanel">
+        <table class="headerPanel"><tr>
+            <td class="leftBox">D59S</td>
+            <td class="centerBox">SKU  {{productDto.skuNbr}} <br>{{productDto.skuDescription}}</td>
+            <td class="rightBox">7</td></tr></table>
+        <div class="subPanel"><span style="padding-left:60px;"><img src="app/images/Img-1.jpg" height="100" width="120"></span> </div>
+    <form name="ReviewForm">
+        <table>
+                <th colspan="2">2017</th>
+                <tr><td>Core / Non Core</td><td>{{productDto.CoreType}}</td></tr>
+                <tr><td>Price Strategy</td><td>{{productDto.priceStrategy}}</td></tr>
+                <tr><td>Ad Retail</td><td>{{productDto.adRetail}}</td></tr>
+                <tr><td>Total Buy Units</td><td>{{productDto.totalBuyUnits}}</td></tr>
+                <tr><td>Total Buy $</td><td>{{productDto.totalBuy}}</td></tr>
+                <tr><td>Projected Sell Thru %</td><td>{{productDto.projectedSellThru}}</td></tr>
+                <tr><td>Forcasted Sales $ </td><td>{{productDto.forecastedSales}}</td></tr>
+            
+            </table>
+        <label>Approve :
+    <input type="checkbox" ng-model="apprv.value1">
+  </label> <label>Reject:
+    <input type="checkbox" ng-model="checkboxModel.value1">
+  </label><br/>
+    <label> Comments :  <textarea ng-model="list" ng-list="&#10;" ng-trim="false"></textarea>  </label><br/><br/>
+        <div align="center">
+        <input type="button" ng-model="Submit" name="submit" value="Submit"/>
+        </div>      
+        </form>
+        </div>
+
+</body>
+</html>

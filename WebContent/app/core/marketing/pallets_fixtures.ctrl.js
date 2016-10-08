@@ -8,8 +8,8 @@
 	function palletsFixturesCtrl($scope, $rootScope, $location, $window, $http, marketingPageService, $uibModal) {
 		var palletsCtrl = this;
 		
-		palletsCtrl.loadFixtures = function (type)  {
-			 $location.path('/ictWalkReview');
+		palletsCtrl.showPalletDetails = function (type)  {
+			 $location.path('/palletDetails');
 		}
 	}
 })();

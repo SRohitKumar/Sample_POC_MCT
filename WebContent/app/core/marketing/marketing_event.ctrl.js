@@ -12,7 +12,10 @@
 			}
 		);
 		
-		mctEventCtrl.loadFixtures = function (type)  {
+		mctEventCtrl.reviewScreen = function (type)  {
+			$location.path('/palletsFixtures');
+		}
+	/*	mctEventCtrl.loadFixtures = function (type)  {
 			 angular.forEach(mctEventCtrl.eventList, function(value,key) {
 				 if(value.id == type){
 					 marketingPageService.setFixtures(value.fixtures);
@@ -25,7 +28,7 @@
 				 $location.path('/marketingFixtures'); 
 			 }
 			 
-		}
+		}*/
 	};
 		
 	})();

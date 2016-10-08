@@ -21,9 +21,9 @@ ssnApp.config(['$routeProvider',function ($routeProvider) {
         	templateUrl: 'app/core/marketing/pallets_fixtures.html',
             controller: 'palletsFixturesCtrl as palletsCtrl'
      
-        }).when('/ictWalkReview', {
-        	templateUrl: 'app/core/marketing/ICWalkReview.html',
-            controller: 'reviewController as icwalkReview'
+        }).when('/palletDetails', {
+        	templateUrl: 'app/core/marketing/palletDetails.html',
+            controller: 'palletDetailsController as palletDtlCtrl'
      
         })
         .otherwise({
