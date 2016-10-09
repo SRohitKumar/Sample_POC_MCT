@@ -9,6 +9,7 @@
 			background-color: #F96302;
 			top: 6%;
 			margin-top: 5px;
+			margin-bottom: -6px;
 		}
 		
 		.btnPallet2 {
@@ -38,6 +39,7 @@
 		.palletDivClass3 {
 			background-color: #f3f3f3;
 			margin-left: 161px;
+			margin-bottom: 37px;
 		}
 		
 		.btn2 {
@@ -86,6 +88,15 @@
 	</style>
 
 	<div class="palletsDivClass">
+	    <div class="panel" style = "padding-left: 324px;background-color: #F96302"> IC Walk Review </div>
+	    <div class="panel" style="padding-left: 6px; background-color: #f3f3f3; word-wrap: inherit;margin-bottom: -7px;">
+ 		 	<div style="align-content: center"><b> Event Name:</b> {{eventName}}</div>
+		</div>
+	    <div class="panel" style="padding-left: 6px; background-color: #f3f3f3; word-wrap: inherit;margin-bottom: 2px;">
+  			<div style="align-content: center"><b>Pallet Aisle:</b> {{palletAisle}} </div>
+		</div>
+		
+		
 		<button class="btnPallet1" data-ng-click="palletsCtrl.showPalletDetails(e)" value="Request1">20</button>
 		<div class="palletDivClass3">
 			<button class="btnPallet5" data-ng-click="palletsCtrl.showPalletDetails(e)">21</button>
@@ -101,8 +112,12 @@
 			<button class="btnPallet5" data-ng-click="palletsCtrl.showPalletDetails(e)">27</button>
 			<button class="btnPallet5" data-ng-click="palletsCtrl.showPalletDetails(e)">28</button>
 		</div>
-		<button class="btnPallet4" data-ng-click="palletsCtrl.showPalletDetails(e)">29</button>
-
+		<button class="btnPallet4" data-ng-click="palletsCtrl.showPalletDetails(e)">29</button><br>
+		<button class="btnPallet4" data-ng-click="palletsCtrl.showPalletDetails(e)" style="height: 126px;margin-top: 1px">30</button><br>
+    <button class="md-button md primary" style="color: black;background-color: white;width: 93px;height: 48px;margin-left: 544px;margin-top: 22px;" data-ng-click="palletsCtrl.backToMainPage()">
+    Back
+    </button>
 	</div>
+	
 
 </div>

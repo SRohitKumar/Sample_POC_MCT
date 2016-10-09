@@ -26,11 +26,33 @@
 		}
 		
 		palletDtlCtrl.submitReview = function() {
+			
+			var modalInstance = $uibModal
+			.open({
+				templateUrl : 'app/core/marketing/saveConfirmation.html',
+				controller : "ModalInstanceCtrl",
+				scope : $scope
+			});
 			//submitted successful dialog need to be shown.
-			 $location.path('/palletsFixtures');
+			// $location.path('/palletsFixtures');
+			
 		}
 	}
 })();
+
+
+/*<div ng-controller="CustomModalController">
+<div class="modal-header">
+    <h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+    {{message}}
+</div>
+<div class="modal-footer">
+    <button class="ad-button ad-blue" type="button" ng-click="confirmAction()"></button>
+    <button class="ad-button ad-blue" type="button" ng-click="cancelAction()"></button>
+</div>
+</div>*/
 
 /*
 myAppRoot.controller('palletDetailsController', function($scope,$http) {
