@@ -95,16 +95,18 @@ tr:nth-child(odd) {
 		                <tr><td>Forcasted Sales $ </td><td>{{palletDtlCtrl.palletDto.forecastedSales}}</td></tr>
 			   </table>
 			  </div>
+                     <div class="container-fluid" style="padding-left: 15%;">
 			  		<label style = "margin-bottom: 23px;" >Approve :
 				    	<input type="checkbox" ng-model="apprv.value1">
 				  	</label> 
 				  	<label>Reject:
 				  	   <input type="checkbox" ng-model="checkboxModel.value1">
 				 	</label><br/>
+                                    </div>
 				    <label> Comments : 
-				        <textarea style="border-style: ridge;" ng-model="list" ng-list="&#10;" ng-trim="false"> </textarea> 
+				        <textarea style="border-style: ridge;" ng-model="list" ng-list="&#10;" ng-trim="false" row="8" cols="50"> </textarea> 
 					</label><br/><br/>
-					<div class="container-fluid" style="padding-left: 68%;">
+					<div class="container-fluid" style="padding-left: 15%;">
 						<button class="md-button md primary" style = "color: black; background-color: white; width: 93px; height: 48px; " data-ng-click= "palletDtlCtrl.backToPalletFixtures()">Back</button>
 						<button class="md-button md primary " style = "color: black; width: 93px; height: 48px; " data-ng-click="palletDtlCtrl.submitReview()">Submit</button>	
 					</div>
