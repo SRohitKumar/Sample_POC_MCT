@@ -64,16 +64,6 @@ tr:nth-child(odd) {
     margin-left: 116px;
     margin-right: auto
 }
-#button1 {
-    position: absolute;
-    left: 30px;
-}
-
-#button2 {
-    position: absolute;
-    right: 357px;
-}
-    
     </style>
     <div class="panel panel-default" style="background-color:#DCDCDC;  height: 838px ; border-style: ridge; ">
   			<div class="panel-body">
@@ -87,14 +77,14 @@ tr:nth-child(odd) {
 			   </table>
 			  </div>
   			 </div>
-  			 <div class="container-fluid" style = "padding-left: 30%;">
-  			 
-					<img src="app/images/Img-1.jpg" height="120" width="100">
-				
+  			 <div class="container-fluid" style = "padding-left: 41%;">
+  			 <div class="navbar-brand">
+					<img src="app/images/Img-1.jpg" height="100" width="120">
+				</div>
   			 </div>
-  			 <div class="panel-body" style="margin-top: -7px;padding-bottom: 265px;">
+  			 <div class="panel-body" style="margin-top: 35px;padding-bottom: 265px;">
     	     <div class="list-group table-responsive" >
-    		   <table class="col-sm-12" style="margin-bottom: 15px;">
+    		   <table class="col-sm-12" style="margin-bottom: 23px;>
 	      	  	<th colspan="2">2017</th>
 		                <tr><td class="col-md-8">Core / Non Core</td><td class="col-md-4">{{palletDtlCtrl.palletDto.CoreType}}</td></tr>
 		                <tr><td>Price Strategy</td><td>{{palletDtlCtrl.palletDto.priceStrategy}}</td></tr>
@@ -105,21 +95,26 @@ tr:nth-child(odd) {
 		                <tr><td>Forcasted Sales $ </td><td>{{palletDtlCtrl.palletDto.forecastedSales}}</td></tr>
 			   </table>
 			  </div>
-                     <div class="container-fluid" style="padding-left: 15%;">
-			  		<label style = "margin-bottom: 15px;" >Approve :
+			  		<label style = "margin-bottom: 23px;" >Approve :
 				    	<input type="checkbox" ng-model="apprv.value1">
 				  	</label> 
 				  	<label>Reject:
 				  	   <input type="checkbox" ng-model="checkboxModel.value1">
 				 	</label><br/>
-                                    </div>
 				    <label> Comments : 
-				        <textarea style="border-style: ridge;" ng-model="list" ng-list="&#10;" ng-trim="false" rows="4" cols="32"> </textarea> 
+				        <textarea style="border-style: ridge; margin: 0px; width: 327px; height: 108px; " ng-model="list" ng-list="&#10;" ng-trim="false"> </textarea> 
 					</label><br/><br/>
-					<div class="container-fluid" style="padding-left: 15%;">
-						<button class="md-button md primary"  id="button1" style = "color: black; background-color: white; width: 93px; height: 48px; " data-ng-click= "palletDtlCtrl.backToPalletFixtures()">Back</button>
-						<button class="md-button md primary " id="button2" style = "color: black; width: 93px; height: 48px; " data-ng-click="palletDtlCtrl.submitReview()">Submit</button>	
-					</div>
+					
+					<table class="col-sm-12">
+	      	  	<tr style="border: none;background-color: gainsboro;">
+	          		<td class="leftBox" style="border: none; background-color: white; background-color: gainsboro;">
+                    <button data-ng-click= "palletDtlCtrl.backToPalletFixtures()" class="saveBtn ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-custom-MasterLogin-Reset"></span><span class="ui-button-text"><b>Back</b></span></button>
+                    </td>
+	            	<td class="rightBox" style="margin-left: -62px;float: right; border: none; background-color: gainsboro;">
+	            	<button style="background-color: #F96302;" data-ng-click="palletDtlCtrl.submitReview()" class="saveBtn ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-custom-MasterLogin-Submit"></span><span class="ui-button-text"><b>Submit</b></span></button>
+	            	</td>
+	            </tr>
+			   </table>
   			 </div>
 			
   	</div>
