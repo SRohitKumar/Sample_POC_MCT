@@ -7,8 +7,17 @@
 	NestedListsDemoController.$inject = ['$scope', '$rootScope','$location', '$http', 'marketingPageService']
 	
 	function NestedListsDemoController($scope, $rootScope, $location, $http, marketingPageService) {
+		
+    marketingPageService.initSlider();
+		
 
 	var nestedCtrl = this;
+	
+	nestedCtrl.showPalletDetails = function (type)  {
+		 $location.path('/palletDetails');
+	}
+	
+	
 	nestedCtrl.designLayout=marketingPageService.getDesign();
 	nestedCtrl.saveLayout = function ()  {
 		var layout = nestedCtrl.models.dropzones;
